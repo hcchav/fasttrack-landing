@@ -1,5 +1,6 @@
 import { EmailForm } from "@/components/email-form";
-import { Timer, Utensils, Dumbbell, TrendingDown, Clock, Zap } from "lucide-react";
+import { Timer, Utensils, Dumbbell, TrendingDown, Clock, Zap, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -147,8 +148,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Blog Section */}
       <section className="border-t border-zinc-800">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              Learn the Basics
+            </h2>
+            <Link 
+              href="/blog" 
+              className="hidden sm:flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              View all articles
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Intermittent Fasting 101: A Busy Man's Guide",
+                excerpt: "Everything you need to know about IF in 5 minutes. No fluff, just the facts that actually matter for weight loss.",
+                readTime: "5 min read",
+                slug: "intermittent-fasting-101",
+              },
+              {
+                title: "Why Low-Carb Works (The Science)",
+                excerpt: "The metabolic advantage of keeping carbs low. How your body switches from burning sugar to burning fat.",
+                readTime: "4 min read",
+                slug: "why-low-carb-works",
+              },
+              {
+                title: "The 16:8 Protocol: Start Here",
+                excerpt: "The most beginner-friendly fasting schedule. Skip breakfast, eat lunch and dinner. Simple.",
+                readTime: "3 min read",
+                slug: "16-8-protocol-guide",
+              },
+            ].map((post, i) => (
+              <Link
+                key={i}
+                href={`/blog/${post.slug}`}
+                className="group rounded-xl border border-zinc-800 bg-zinc-900/30 p-6 transition-all hover:border-emerald-500/30 hover:bg-zinc-900/50"
+              >
+                <p className="text-sm text-emerald-400">{post.readTime}</p>
+                <h3 className="mt-2 text-lg font-semibold group-hover:text-emerald-400 transition-colors">
+                  {post.title}
+                </h3>
+                <p className="mt-2 text-zinc-400 text-sm">{post.excerpt}</p>
+                <div className="mt-4 flex items-center gap-2 text-sm text-zinc-500 group-hover:text-emerald-400 transition-colors">
+                  Read more
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </Link>
+            ))}
+          </div>
+          
+          <Link 
+            href="/blog" 
+            className="mt-8 flex sm:hidden items-center justify-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors"
+          >
+            View all articles
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="border-t border-zinc-800 bg-zinc-950">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">
             Ready to Stop Overcomplicating Weight Loss?
