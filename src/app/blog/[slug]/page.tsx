@@ -2,261 +2,311 @@ import Link from "next/link";
 import { ArrowLeft, Zap } from "lucide-react";
 import { notFound } from "next/navigation";
 import { EmailForm } from "@/components/email-form";
+import { Markdown } from "@/components/markdown";
 
 const posts: Record<string, { title: string; readTime: string; content: string }> = {
   "intermittent-fasting-101": {
     title: "Intermittent Fasting 101: A Busy Man's Guide",
     readTime: "5 min read",
-    content: `
-## What is Intermittent Fasting?
+    content: `## What is Intermittent Fasting?
 
 Intermittent fasting (IF) isn't a diet—it's an eating schedule. You cycle between periods of eating and fasting. That's it.
 
-No special foods. No calorie counting required. No expensive supplements.
+No special foods required. No calorie counting. No expensive supplements or meal delivery services.
 
-## Why It Works for Busy Men
+## Why IF Works for Busy Men
 
-**1. Simplicity**
+### 1. Radical Simplicity
+
 Skip breakfast. Eat lunch and dinner. Done.
 
-No meal prep at 6 AM. No carrying Tupperware to work. No thinking about food until noon.
+No 6 AM meal prep. No hauling Tupperware to the office. No thinking about food until noon. Your morning becomes simpler, not harder.
 
-**2. Metabolic Benefits**
-When you fast, your body:
-- Drops insulin levels (enables fat burning)
-- Increases human growth hormone (preserves muscle)
-- Triggers cellular repair processes
+### 2. Proven Metabolic Benefits
 
-**3. Time Savings**
-One less meal to plan, prepare, and clean up. That's 30+ minutes back in your day.
+When you fast, your body undergoes measurable changes:
 
-## The Most Popular Protocols
+- **Insulin drops significantly** — enabling your body to access stored fat for fuel
+- **Human growth hormone increases** — helping preserve lean muscle mass
+- **Cellular autophagy activates** — your body cleans out damaged cells
+- **Norepinephrine rises** — boosting alertness and fat breakdown
 
-| Protocol | Fasting Window | Eating Window |
-|----------|---------------|---------------|
-| **16:8** | 16 hours | 8 hours |
-| **18:6** | 18 hours | 6 hours |
-| **20:4** | 20 hours | 4 hours |
-| **OMAD** | 23 hours | 1 hour |
+### 3. Time You Get Back
 
-**Start with 16:8.** It's the easiest to maintain and still highly effective.
+One less meal to plan, shop for, prepare, eat, and clean up after. That's 30-45 minutes back in your day—time you can spend on work, family, or sleep.
 
-## A Typical Day (16:8)
+## Popular IF Protocols
 
-- **7:00 AM** - Wake up. Black coffee or water only.
-- **12:00 PM** - Break fast with lunch.
-- **3:00 PM** - Snack if needed.
-- **7:30 PM** - Dinner.
-- **8:00 PM** - Eating window closes.
+| Protocol | Fasting | Eating Window | Best For |
+|----------|---------|---------------|----------|
+| **16:8** | 16 hrs | 8 hrs | Beginners |
+| **18:6** | 18 hrs | 6 hrs | Intermediate |
+| **20:4** | 20 hrs | 4 hrs | Experienced |
+| **OMAD** | 23 hrs | 1 hr | Advanced |
 
-## What You Can Have While Fasting
+**Start with 16:8.** It's sustainable long-term and delivers 80% of the benefits with 20% of the difficulty.
 
-✅ Water (still or sparkling)
-✅ Black coffee
-✅ Plain tea
-✅ Salt/electrolytes
+## A Typical 16:8 Day
 
-❌ Anything with calories
-❌ Diet sodas (debated, but play it safe)
-❌ Cream or sugar in coffee
+| Time | What Happens |
+|------|--------------|
+| 7:00 AM | Wake up. Black coffee or water. |
+| 8:00 - 11:00 AM | Peak focus time (no food = no energy crash) |
+| 12:00 PM | Break your fast with a solid lunch |
+| 3:00 PM | Optional snack if hungry |
+| 7:30 PM | Dinner with family |
+| 8:00 PM | Eating window closes |
 
-## Common Mistakes
+## What's Allowed During Your Fast
 
-**1. Starting too aggressive**
-Don't jump into 20:4 on day one. Start with 14:10 or 16:8.
+**Yes (zero calories):**
+- Water (still or sparkling)
+- Black coffee (no cream, no sugar)
+- Plain tea (green, black, herbal)
+- Salt or electrolytes if needed
 
-**2. Breaking fast with junk**
-Your first meal matters. Protein and healthy fats > donuts.
+**No (breaks the fast):**
+- Anything with calories
+- Cream or sugar in coffee
+- Diet sodas (insulin response is debated—play it safe)
+- "Zero calorie" energy drinks
 
-**3. Not drinking enough water**
-You're not eating breakfast, but you still need hydration.
+## The 4 Mistakes That Derail Beginners
 
-**4. Obsessing over the clock**
-±30 minutes won't ruin your progress. Life happens.
+**Mistake #1: Going too hard, too fast**
+
+Don't attempt 20:4 or OMAD on day one. Start with 14:10 if needed. Build tolerance over 2-3 weeks.
+
+**Mistake #2: Breaking your fast with garbage**
+
+Your first meal matters. Lead with protein and healthy fats—eggs, meat, avocado. Not a muffin or bagel.
+
+**Mistake #3: Forgetting to hydrate**
+
+No breakfast doesn't mean no fluids. Drink water consistently through the morning. Add salt if you feel lightheaded.
+
+**Mistake #4: Watching the clock obsessively**
+
+Being 30 minutes over or under won't ruin your results. Consistency matters more than perfection. Life happens.
 
 ## The Bottom Line
 
-Intermittent fasting is the simplest "diet" change you can make. No special foods. No subscriptions. No complexity.
+Intermittent fasting is the simplest change you can make. No special groceries. No subscriptions. No complexity.
 
-Try 16:8 for two weeks. Skip breakfast, eat lunch and dinner in an 8-hour window. See how you feel.
+**Your challenge:** Try 16:8 for 14 days. Skip breakfast, eat lunch around noon, finish dinner by 8 PM.
 
-Most men report more energy, less brain fog, and steady weight loss—without thinking about food all day.
-    `,
+Most men report more energy, sharper focus, and steady fat loss—without thinking about food all morning.`,
   },
   "why-low-carb-works": {
     title: "Why Low-Carb Works (The Science)",
     readTime: "4 min read",
-    content: `
-## The Simple Explanation
+    content: `## The 30-Second Explanation
 
-When you eat carbs, your body converts them to glucose (sugar). Your body then releases insulin to manage that glucose.
+When you eat carbohydrates, your body converts them to glucose (blood sugar). Your pancreas then releases insulin to shuttle that glucose into cells.
 
-Here's the problem: **insulin tells your body to store fat.**
+Here's the key insight: **insulin is a storage hormone.** When insulin is elevated, your body is in "store fat" mode. When insulin is low, your body shifts to "burn fat" mode.
 
-High carbs = high insulin = fat storage mode.
+**High carbs → High insulin → Fat storage**
 
-Low carbs = low insulin = fat burning mode.
+**Low carbs → Low insulin → Fat burning**
+
+That's the entire mechanism. Everything else is details.
 
 ## What Happens When You Cut Carbs
 
-**Days 1-3: Adjustment**
-Your body is used to running on glucose. It needs time to switch fuel sources. You might feel tired or foggy. This is normal.
+### Days 1-3: The Adjustment Phase
 
-**Days 4-7: The Switch**
-Your liver starts producing ketones from fat. Your body begins using fat for fuel instead of sugar.
+Your body has been running on glucose for years—maybe decades. It needs time to switch fuel systems. You might experience:
 
-**Week 2+: Fat Adaptation**
-Energy stabilizes. Hunger decreases. The scale starts moving.
+- Fatigue or low energy
+- Brain fog or irritability
+- Carb cravings
+- Headaches (often from dehydration)
 
-## The Metabolic Advantage
+This is sometimes called "keto flu." It's temporary. Stay hydrated, keep your electrolytes up, and push through.
 
-When your body runs on fat:
+### Days 4-7: The Metabolic Switch
 
-- **Stable energy** - No blood sugar crashes at 3 PM
-- **Reduced hunger** - Fat is more satiating than carbs
-- **Mental clarity** - Your brain loves ketones
-- **Consistent fat loss** - You're literally burning fat for fuel
+Your liver begins producing ketones from fat. Your body starts using fat—both dietary and stored—as its primary fuel source. Energy typically stabilizes. Cravings diminish.
 
-## How Low is "Low-Carb"?
+### Week 2 and Beyond: Fat Adaptation
 
-| Approach | Daily Net Carbs |
-|----------|-----------------|
-| Standard American Diet | 250-300g |
-| Moderate Low-Carb | 100-150g |
-| Low-Carb | 50-100g |
-| Keto | Under 50g |
-| Strict Keto | Under 20g |
+Your body becomes efficient at burning fat. Benefits compound:
 
-**Our recommendation: Under 50g net carbs.**
+- Steady, sustained energy (no crashes)
+- Dramatically reduced hunger
+- Mental clarity improves
+- Scale starts moving consistently
 
-This is low enough to see significant results but flexible enough to be sustainable.
+## The Metabolic Advantages
+
+When you're running on fat instead of sugar:
+
+- **No energy rollercoaster** — Blood sugar stays stable. No 3 PM crash.
+- **Hunger disappears** — Fat is more satiating. You naturally eat less.
+- **Mental clarity improves** — Your brain runs efficiently on ketones.
+- **Fat loss accelerates** — You're literally using stored fat for fuel.
+
+## How Low Should You Go?
+
+| Approach | Daily Net Carbs | Typical Results |
+|----------|-----------------|-----------------|
+| Standard American Diet | 250-300g | Weight gain, hunger |
+| Moderate Low-Carb | 100-150g | Slow progress |
+| Low-Carb | 50-100g | Steady fat loss |
+| Keto | Under 50g | Faster fat loss |
+| Strict Keto | Under 20g | Maximum ketosis |
+
+**Our recommendation: Under 50g net carbs daily.**
+
+This level is low enough for significant results but flexible enough for real life—a beer with friends, some berries with breakfast.
 
 ## Net Carbs vs Total Carbs
 
 **Net Carbs = Total Carbs - Fiber**
 
-Fiber doesn't spike blood sugar, so we don't count it.
+Fiber doesn't spike blood sugar or trigger insulin, so we don't count it.
 
-Example: An avocado has 12g total carbs but 10g fiber = **2g net carbs**.
+**Example:** An avocado shows 12g total carbs on the label. But 10g is fiber. Actual net carbs: **2g**.
 
-## What to Eat
+## What to Eat (The Simple List)
 
-**Proteins** (unlimited)
-- Beef, chicken, pork, fish
-- Eggs
-- Seafood
+### Proteins — Build your meals around these
+- Beef, pork, lamb, chicken, turkey
+- Fish and seafood
+- Eggs (whole, including the yolk)
+- Bacon and sausage (check for added sugar)
 
-**Fats** (don't fear them)
-- Olive oil, avocado oil
-- Butter
-- Cheese
-- Nuts (in moderation)
+### Fats — Don't fear them
+- Olive oil, avocado oil, coconut oil
+- Butter and ghee
+- Cheese (most types)
+- Nuts and seeds (in moderation—carbs add up)
 
-**Low-Carb Vegetables**
-- Leafy greens
-- Broccoli, cauliflower
-- Peppers, zucchini
-- Asparagus
+### Low-Carb Vegetables
+- Leafy greens (spinach, kale, lettuce)
+- Cruciferous (broccoli, cauliflower, cabbage)
+- Zucchini, asparagus, green beans
+- Peppers, mushrooms, tomatoes (moderate)
 
 ## What to Avoid
 
-- Bread, pasta, rice
-- Sugar and sweets
-- Most fruits (berries are OK in moderation)
-- Beer and sugary drinks
-- "Low-fat" products (usually high sugar)
+- **Bread, pasta, rice, potatoes** — The obvious ones
+- **Sugar in all forms** — Soda, candy, desserts, fruit juice
+- **Most fruits** — Berries in moderation are fine
+- **Beer** — Liquid bread. Spirits or dry wine are better options.
+- **"Low-fat" products** — Usually loaded with sugar to compensate
 
 ## The Bottom Line
 
-Low-carb works because it addresses the root cause of weight gain: chronically elevated insulin.
+Low-carb eating works because it addresses the root cause of fat gain: chronically elevated insulin from a high-carb diet.
 
-Cut the carbs, lower the insulin, burn the fat.
+Lower your carbs. Lower your insulin. Burn your fat.
 
-It's not magic. It's metabolism.
-    `,
+It's not magic. It's metabolism.`,
   },
   "16-8-protocol-guide": {
     title: "The 16:8 Protocol: Start Here",
     readTime: "3 min read",
-    content: `
-## What is 16:8?
+    content: `## What is 16:8?
 
 Fast for 16 hours. Eat within an 8-hour window. Repeat daily.
 
-It's the most popular intermittent fasting protocol because it's the easiest to stick with.
+It's the most popular intermittent fasting protocol for one reason: it works without making your life difficult.
 
 ## Why 16:8 is Perfect for Beginners
 
-1. **You sleep through most of it** - 8 hours of fasting happens while you're asleep
-2. **Skip one meal** - Just don't eat breakfast
-3. **Normal dinner time** - You can still eat dinner with family
-4. **Flexible** - Easy to adjust if needed
+1. **You sleep through 8 hours of it** — Half your fast happens while you're unconscious
+2. **You only skip breakfast** — Lunch and dinner stay normal
+3. **Family dinner stays intact** — You can still eat with your wife and kids at 7 PM
+4. **It's flexible** — Shift your window if you need to
 
 ## The Standard 16:8 Schedule
 
-| Time | What to Do |
-|------|------------|
-| 8:00 PM | Stop eating (fasting begins) |
-| Sleep | Fasting continues |
-| 7:00 AM | Wake up - water/black coffee only |
-| 12:00 PM | Break your fast (lunch) |
-| 12-8 PM | Eating window |
-| 8:00 PM | Fasting begins again |
+| Time | What's Happening |
+|------|------------------|
+| 8:00 PM | Last bite of food. Fasting begins. |
+| 8 PM - 7 AM | Sleeping + fasting |
+| 7:00 AM | Wake up. Water or black coffee only. |
+| 7 AM - 12 PM | Fasting continues. Peak mental clarity. |
+| 12:00 PM | Break your fast with lunch. |
+| 12 - 8 PM | 8-hour eating window |
+| 8:00 PM | Window closes. Repeat. |
 
-## Week 1: Getting Started
+## Your First Week: What to Expect
 
-**Days 1-2**
-You'll feel hungry in the morning. That's normal. Drink water or black coffee. The hunger passes in 15-20 minutes.
+### Days 1-2
 
-**Days 3-4**
-Morning hunger starts decreasing. Your body is adjusting.
+You'll feel hungry around your normal breakfast time. This is habitual hunger—your body expecting food because it always gets food then.
 
-**Days 5-7**
-Most people report they're not even hungry until noon. Some feel more energy and focus in the morning.
+**What to do:** Drink water or black coffee. Wait 20 minutes. The hunger will pass. It always does.
 
-## Tips for Success
+### Days 3-4
 
-**1. Stay hydrated**
-Drink water throughout the morning. Add a pinch of salt if you feel lightheaded.
+Morning hunger starts fading. Your body is adjusting to the new schedule. Energy levels may fluctuate.
 
-**2. Black coffee is your friend**
-Caffeine suppresses appetite and boosts metabolism. Just no cream or sugar.
+### Days 5-7
 
-**3. Break your fast right**
-First meal should be protein-focused. Eggs, meat, fish. Not a bagel.
+Most guys report they're not even hungry until noon. Some feel *more* focused in the morning without food weighing them down.
 
-**4. Don't overeat in your window**
-Fasting isn't a license to binge. Eat normal portions.
+By end of week one, it feels normal.
 
-**5. Be consistent**
-Same eating window every day helps your body adapt faster.
+## 5 Tips for 16:8 Success
 
-## Common Questions
+### 1. Stay Hydrated
+
+Drink water consistently through the morning. A lot of "hunger" is actually thirst. Add a pinch of salt if you feel lightheaded—you lose sodium when fasting.
+
+### 2. Make Black Coffee Your Ally
+
+Caffeine suppresses appetite and boosts metabolism. It makes fasting easier, not harder. Just skip the cream and sugar—they break your fast.
+
+### 3. Break Your Fast With Protein
+
+Your first meal should be built around protein: eggs, chicken, beef, fish. Not a bagel. Not oatmeal. Protein keeps you full longer and prevents overeating later.
+
+### 4. Don't Binge in Your Window
+
+Fasting isn't a license to eat garbage for 8 hours. Eat normal portions of real food. The calorie deficit should come from skipping breakfast, not from restriction during your window.
+
+### 5. Same Window Every Day
+
+Consistency helps your body adapt. If your window is 12-8 PM, keep it 12-8 PM daily. Your hunger signals will adjust to match.
+
+## Frequently Asked Questions
 
 **Can I work out while fasting?**
-Yes. Many people prefer fasted workouts. Start light and see how you feel.
 
-**What if I get really hungry?**
-Drink water. Wait 20 minutes. If you're still hungry, a small handful of nuts won't ruin everything.
+Yes. Many guys prefer training fasted—they feel lighter and more alert. Start with moderate intensity and see how you respond. Stay hydrated.
 
-**Can I do 14:10 instead?**
-Absolutely. Start there if 16:8 feels too aggressive. Work up to it.
+**What if I'm starving and it's only 10 AM?**
+
+Drink a large glass of water. Wait 20 minutes. If you're still genuinely hungry (not just bored), a small handful of nuts won't undo your progress. Don't stress.
+
+**Can I start with 14:10 instead?**
+
+Absolutely. Start with a 14-hour fast, 10-hour eating window. After a week, tighten to 15:9, then 16:8. Gradual adaptation works great.
 
 **What about weekends?**
-Stay consistent if you can. But if you slip to 14:10 occasionally, don't stress.
+
+Stay consistent if you can. But if you have a brunch on Saturday and eat at 10 AM, just resume 16:8 on Sunday. One day won't derail you.
+
+**Can I drink alcohol in my window?**
+
+Yes, but know that alcohol pauses fat burning while your body processes it. Spirits or dry wine are better than beer. Keep it moderate.
 
 ## The Bottom Line
 
-16:8 is simple:
+16:8 is dead simple:
+
 - Stop eating at 8 PM
 - Skip breakfast
 - Eat lunch at noon
 - Eat dinner by 8 PM
 
-That's it. No complexity. No special foods. Just a time window.
+No special foods. No counting. No apps required (though one helps).
 
-Try it for 2 weeks. Most men never go back to eating breakfast.
-    `,
+**Your challenge:** Try this for 14 days. Most men who do never go back to breakfast.`,
   },
 };
 
@@ -300,39 +350,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <p className="text-sm text-emerald-400">{post.readTime}</p>
         <h1 className="mt-2 text-3xl font-bold sm:text-4xl">{post.title}</h1>
         
-        <div 
-          className="mt-12 prose prose-invert prose-emerald max-w-none
-            prose-headings:font-bold prose-headings:text-white
-            prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-            prose-p:text-zinc-300 prose-p:leading-relaxed
-            prose-strong:text-white
-            prose-li:text-zinc-300
-            prose-table:text-sm
-            prose-th:text-left prose-th:text-zinc-400 prose-th:font-medium prose-th:pb-2
-            prose-td:py-2 prose-td:text-zinc-300
-          "
-        >
-          {post.content.split('\n').map((line, i) => {
-            if (line.startsWith('## ')) {
-              return <h2 key={i}>{line.replace('## ', '')}</h2>;
-            }
-            if (line.startsWith('**') && line.endsWith('**')) {
-              return <p key={i}><strong>{line.replace(/\*\*/g, '')}</strong></p>;
-            }
-            if (line.startsWith('- ')) {
-              return <li key={i}>{line.replace('- ', '')}</li>;
-            }
-            if (line.startsWith('| ')) {
-              return null; // Skip table rows for simple rendering
-            }
-            if (line.startsWith('✅') || line.startsWith('❌')) {
-              return <p key={i}>{line}</p>;
-            }
-            if (line.trim() === '') {
-              return null;
-            }
-            return <p key={i}>{line}</p>;
-          })}
+        <div className="mt-12">
+          <Markdown content={post.content} />
         </div>
 
         {/* CTA */}
